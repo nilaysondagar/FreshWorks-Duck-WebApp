@@ -1,0 +1,82 @@
+/*********************************************************************************
+ *										TAG CSS									 *
+ *********************************************************************************/
+
+body {
+	font-family: "Raleway";
+}
+
+h2 {
+	color: #5ecb61;
+	text-align: center;
+	font-size: 40px;
+}
+
+input {
+	width: 90%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+	padding: 12px 20px;
+	color: black;
+	font-size: 12px;
+	box-sizing: border-box;
+	background-color: white;
+	border-radius: 5px;
+	border: #f37041 solid 3px;
+	outline: none;
+	transition: 0.4s ease-in-out;
+}
+
+input:hover {
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+input:focus {
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+/*********************************************************************************
+ *										ID CSS									 *
+ *********************************************************************************/
+
+#duckform {
+	width: 450px;
+	height: 650px;
+	margin-left: 15%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	padding: 20px;
+	text-align: left;
+	font-weight: 600;
+	color: black;
+	background-color: white; 
+	border-radius: 10px;
+	border: #eaeaea solid 1px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+#submit {
+	background-color: white;
+    color: black;
+    border: #5ecb61 solid 3px;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+#submit:hover {
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+#time {
+	width: 30%;
+	font-family: "Roboto";
+	font-weight: 700;
+}
+
+/*********************************************************************************
+ *									  CLASS CSS									 *
+ *********************************************************************************/
