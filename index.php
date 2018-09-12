@@ -39,6 +39,8 @@
 		list($numfood_err, $numfood) = empty_check($_POST['numfood']);
 		error_check($_POST['numfood'], "/^[0-9]*$/", $numfood_err, "Only numbers allowed.", $_POST['numfood'], $form_valid);
 
+		$time = $_POST['time'];
+
 	}// if 
 
 	if(isset($_POST["submit"]) && $_POST["submit"] == "submit" && $form_valid == true) {
@@ -80,6 +82,11 @@
 	} else {
 		// Include form by default
 		include "duckform.inc";
+
+		if($form_valid == false) {
+			echo "<script type='text/javascript'>showForm();</script>";
+		}
+
 	}// if else
 
 
