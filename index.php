@@ -21,7 +21,7 @@
 	// Include HTML headers
 	include "header.inc";
 
-	if($_SERVER["REQUEST_METHOD"] == "POST") {
+	if($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['deleterows']) && !isset($_POST['formpage'])) {
 
 		// error check the food field
 		list($food_err, $food) = empty_check($_POST['food']);
@@ -59,25 +59,52 @@
 
 		// Send request to table, print error if query fails
 		$result = pg_query($database, $sql_command) or die('Query Failed: ' . pg_last_error());
+	} else if((isset($_GET['showdata']) && $_GET['showdata'] == "data") || isset($_POST['deleterows'])) {
+
+		if(isset($_POST['deleterows']) && $_POST['deleterows'] == "delete") {
+
+			foreach ($_POST['delete'] as $row) {
+				$sql_command = "DELETE FROM duckinfo WHERE id =" . $row;
+				$result = pg_query($database, $sql_command) or die('Query Failed: ' . pg_last_error());
+			} // foreach
+
+		}// if
 
 		// Get all data and print in table format
-		$sql_command = "SELECT TIME, FOOD, LOCATION, NUMDUCKS, NUMFOOD FROM duckinfo";
+		$sql_command = "SELECT * FROM duckinfo";
 
 		// Send request to table, print error if query fails
 		$result = pg_query($database, $sql_command) or die('Query Failed: ' . pg_last_error());
 
 		// Print out table in HTML (debugging)
-		echo "<table>";
+		echo "<form action='index.php' method='post'>";
+		echo "<table id='datatable'>";
+		echo "<tr id='tableheader'>";
+		echo "<td align='center'>Time (HHMM)</td>";
+		echo "<td align='center'>Food</td>";
+		echo "<td align='center'>Location</td>";
+		echo "<td align='center'>Number of Ducks</td>";
+		echo "<td align='center'>Amount of Food (lb)</td>";
+		echo "<td align='center' id='deletecolumn'>Delete</td>";
+		echo "</tr>";
+
 		while($row = pg_fetch_assoc($result)){
 			echo "<tr>";
-			echo "<td align='center' width='200'>" . $row['time'] . "</td>";
-			echo "<td align='center' width='200'>" . $row['food'] . "</td>";
-			echo "<td align='center' width='200'>" . $row['location'] . "</td>";
-			echo "<td align='center' width='200'>" . $row['numducks'] . "</td>";
-			echo "<td align='center' width='200'>" . $row['numfood'] . "</td>";
+			echo "<td align='center'>" . $row['time'] . "</td>";
+			echo "<td align='center'>" . $row['food'] . "</td>";
+			echo "<td align='center'>" . $row['location'] . "</td>";
+			echo "<td align='center'>" . $row['numducks'] . "</td>";
+			echo "<td align='center'>" . $row['numfood'] . "</td>";
+			echo "<td align='center'><input type='checkbox' name='delete[]' value='" . $row['id'] . "'></td>";
 			echo "</tr>";
 		}
+
 		echo "</table>";
+		echo "<div style='text-align: center; margin-top: 5%;'>";
+		echo "<button class='button' type='submit' name='formpage' value='form'>Show Form</button>";
+		echo "&nbsp&nbsp&nbsp<button type='submit' name='deleterows' id='deleterows' class='button' value='delete'>Delete Rows</button>";
+		echo "</div>";
+		echo "</form>";
 
 	} else {
 		// Include form by default
@@ -85,7 +112,7 @@
 
 		if($form_valid == false) {
 			echo "<script type='text/javascript'>showForm();</script>";
-		}
+		}// if
 
 	}// if else
 

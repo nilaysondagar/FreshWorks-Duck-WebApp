@@ -6,6 +6,10 @@
 		<p id="duckinfo">Hello! My name is Nilay Sondagar, and I've been researching ducks for the last 4 years. In that time, I've learned a lot about these fascinating creatures. However, I need your help to complete my research! I'd really appreciate it if you could answer a few questions about our aquatic friends in your neighbourhood.</p>
 
 		<button class="button" onclick="showForm()">Show Me!</button>
+		<br><br><br>
+		<form action="index.php" method="get">
+			<button type="submit" name="showdata" value="data" class="button">See Data</button>
+		</form>
 
 	</div>
 

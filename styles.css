@@ -16,7 +16,7 @@ h2 {
 	font-size: 40px;
 }
 
-input {
+input[type=text], input[type=time] {
 	width: 90%;
 	margin-top: 10px;
 	margin-bottom: 20px;
@@ -32,12 +32,28 @@ input {
 	transition: 0.4s ease-in-out;
 }
 
-input:hover {
+input[type=text]:hover, input[type=time]:hover {
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
-input:focus {
+input[type=text]:focus, input[type=time]:focus {
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+table {
+	border-collapse: collapse;
+	width: 80%;
+	margin: auto;
+}
+
+td {
+	border-collapse: collapse;
+	padding: 1%;
+
+}
+
+tr {
+	width: 18%;
 }
 
 /*********************************************************************************
@@ -51,11 +67,25 @@ input:focus {
 	position: relative;
 }
 
+#datatable {
+	color: black;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    padding: 10px;
+    margin-top: 2%;
+}
+
+#deletecolumn {
+	width: 10%;
+}
+
 #duckform {
 	width: 400px;
 	height: 550px;
 	margin-left: 20%;
 	margin-top: 15%;
+	margin-bottom: 10%;
 	padding: 20px;
 	position: absolute;
 	text-align: left;
@@ -94,6 +124,12 @@ input:focus {
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
+#tableheader {
+	font-weight: bold;
+	color: #f37041;
+	/*border-bottom: solid 2px black;*/
+}
+
 #time {
 	width: 35%;
 	font-family: "Roboto";
@@ -130,6 +166,8 @@ input:focus {
 
 @media screen and (max-width: 1020px) {
 
-
+	html {
+		height: 140%;
+	}
 
 }

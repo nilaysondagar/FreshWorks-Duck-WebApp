@@ -9,6 +9,7 @@ function showForm() {
 			inOrOut = 0;
 		} else if(inOrOut == 0) {	
 			document.getElementById("duckform").style.marginTop = "15%";
+			document.getElementById("duckform").style.marginLeft = "20%";
 			inOrOut = 1;
 		} // if else
 
@@ -18,6 +19,7 @@ function showForm() {
 			document.getElementById("duckform").style.marginLeft = "123%";
 			inOrOut = 0;
 		} else if(inOrOut == 0) {	
+			document.getElementById("duckform").style.marginTop = "15%";
 			document.getElementById("duckform").style.marginLeft = "20%";
 			inOrOut = 1;
 		} // if else
