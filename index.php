@@ -5,11 +5,11 @@
  * Author: Nilay Sondagar
  * Date Created: September 5, 2018
  * Purpose: Generates webpages for the Duck Tracker website, including an info
- * 			page, form page, and data page. Also validates form submissions.
+ * 			page, form page, verification page and data page. Also validates 
+ *			form submissions.
  */
 	
 	// Variables
-	$content = '';                                                      // stores current page
 	$food_err = $location_err = $numducks_err = $numfood_err = ""; 		// error messages used in form
 	$time = $food = $location = $numducks = $numfood = "";    			// stores form values
 	$form_valid = true;                                                 // stores whether form is valid or not
@@ -69,6 +69,8 @@
 
 		// Send request to table, print error if query fails
 		$result = pg_query($database, $sql_command) or die('Query Failed: ' . pg_last_error());
+
+		include "confirmation.inc";
 
 	// If the "Show Data" button is pressed, or rows have been deleted, show
 		// a print out of the SQL table

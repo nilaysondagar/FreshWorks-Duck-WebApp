@@ -20,7 +20,7 @@
 <div id="formcard">
 
 	<form action="index.php" id="duckform" method="post" enctype="multipart/form-data">
-		<br>
+		
 		What time are the ducks fed?<span class="error"> </span><br>
 		<input type="time" required name="time" value="<?php echo $time;?>" id="time"><br>
 
@@ -36,7 +36,7 @@
 		How much food (lb) are the ducks fed?<span class="error"> <?php echo $numfood_err;?></span><br>
 		<input type="text" required name="numfood" value="<?php echo $numfood;?>"><br>
 
-		<button type="submit" name="submit" value="submit" class="button">Submit</button>
+		<button type="submit" id="submit" name="submit" value="submit" class="button">Submit</button>
 
 	</form>
 
