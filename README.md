@@ -1,12 +1,11 @@
 # DuckTracker_WebApp
 
-The Duck Tracker – FreshWorks Studio Selection Test
-------------------------------------------------------------
 By: Nilay Sondagar
 Date: September 16, 2018
 
 
 THE ASSIGNMENT
+---------------------------------------------
 To create a web application for crowdsourcing data about ducks from around the world. The data points that the scientist needs to collect are the following:
 
 •	What time the ducks are fed
@@ -18,6 +17,7 @@ To create a web application for crowdsourcing data about ducks from around the w
 The collected data also needs to be presented in a user-friendly way to allow the scientist to evaluate the submitted data. 
 
 THE GAME PLAN
+---------------------------------------------
 Since the crowdsourced data was to be short, text-based points, I felt that the best way to collect the data was through the use of an HTML form. In addition to the form, the web application would need several other pages:
 
 •	An introduction page: Contains background on the why the data needed to be collected, and a short message from the scientist.
@@ -28,6 +28,7 @@ Since the crowdsourced data was to be short, text-based points, I felt that the 
 Since the data was being crowdsourced, it was possible that some of the data that was submitted may be incorrect or invalid, which meant it was also important to include the option to delete entries. Finally, the application needed to be designed in a way that it was easily accessible on desktop and mobile.
 
 UTILIZED TECHNOLOGIES
+---------------------------------------------
 The web application was composed of several languages and services, which can be broken down into a three-tiered system. 
 
 Backend Stack
@@ -47,12 +48,15 @@ Frontend (User Interface)
 The user interface was created using pure HTML, CSS, and JavaScript. All the styles and dynamic resizing were handled by CSS, using relative lengths like vh and vw (viewport height & viewport width), and using media queries to determine the orientation of the viewing device. JavaScript was used to slide the form page in and out of hiding, and to close the form page when an orientation change was detected, to prevent the form page from sliding in the incorrect directions. I chose these languages because they are the ones I have the most experience with, and they allowed me to do everything required for this application.
 
 TIME COMMITMENT
+---------------------------------------------
 I used the full 10 hours approved for this assignment to complete and test all aspects of the web application. However, due to the time restriction, there was one bug that I was unable to fix, as I discovered it at the end of my testing. When using the website on Android OS, the page attempts to resize itself when the virtual keyboard pops up, which makes the page appear to jump. The elements do resize themselves properly, however, it can be quite distracting.
 
 
 LINKS
+---------------------------------------------
 Git Repository: https://github.com/nilaysondagar/FreshWorks-Duck-WebApp/ 
 Live Website: http://nilay.sondagar.com/DuckTracker/ 
 
 FINAL WORDS
+---------------------------------------------
 I very much enjoyed this assignment, as it gave me an opportunity to try out some new design elements I had been wanting to implement (like the slide-out card). It also allowed me to learn how to set up and use SQL databases. Thank you for taking the time to look over my selection test. I hope it was up to the FreshWorks standard, and I look forward to hearing from you soon!
